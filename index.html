@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QE Together — High Barnet Community Bake Sale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf6ee;
+    --blush: #f5c6c6;
+    --rose: #e8909a;
+    --dusty-pink: #d4788a;
+    --deep-rose: #b55068;
+    --caramel: #c9823e;
+    --warm-tan: #e8c99a;
+    --butter: #f9eecc;
+    --chocolate: #4a2c1e;
+    --mocha: #7a4a35;
+    --sage: #a8b89a;
+    --soft-sage: #d0ddc8;
+    --white: #fff9f5;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–cream);
+color: var(–chocolate);
+font-family: ‘Lato’, sans-serif;
+font-weight: 300;
+overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+position: fixed; top: 0; width: 100%; z-index: 100;
+background: rgba(253, 246, 238, 0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(201, 130, 62, 0.15);
+padding: 0 40px;
+display: flex; align-items: center; justify-content: space-between;
+height: 68px;
+}
+
+.nav-brand {
+font-family: ‘Dancing Script’, cursive;
+font-size: 1.7rem;
+color: var(–deep-rose);
+text-decoration: none;
+}
+
+.nav-links {
+display: flex; gap: 32px; list-style: none;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(–mocha);
+font-size: 0.85rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+font-weight: 400;
+transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(–deep-rose); }
+
+.nav-donate {
+background: var(–deep-rose);
+color: white !important;
+padding: 9px 22px;
+border-radius: 50px;
+font-weight: 700 !important;
+transition: background 0.2s !important;
+}
+
+.nav-donate:hover { background: var(–dusty-pink) !important; color: white !important; }
+
+/* ── HERO ─────────────────────────────────────── */
+#hero {
+min-height: 100vh;
+background:
+radial-gradient(ellipse at 70% 30%, rgba(245,198,198,0.55) 0%, transparent 55%),
+radial-gradient(ellipse at 15% 75%, rgba(232,200,154,0.4) 0%, transparent 50%),
+radial-gradient(ellipse at 85% 85%, rgba(208,221,200,0.35) 0%, transparent 45%),
+var(–cream);
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+text-align: center;
+padding: 120px 40px 80px;
+position: relative;
+overflow: hidden;
+}
+
+/* Decorative blobs */
+.hero-blob {
+position: absolute;
+border-radius: 50%;
+opacity: 0.12;
+animation: float 6s ease-in-out infinite;
+}
+.blob-1 { width: 380px; height: 380px; background: var(–rose); top: -80px; right: -60px; animation-delay: 0s; }
+.blob-2 { width: 260px; height: 260px; background: var(–caramel); bottom: -40px; left: -40px; animation-delay: 2s; }
+.blob-3 { width: 180px; height: 180px; background: var(–sage); bottom: 80px; right: 120px; animation-delay: 4s; }
+
+@keyframes float {
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-18px) scale(1.04); }
+}
+
+/* Decorative sprinkle dots */
+.sprinkles {
+position: absolute; inset: 0; pointer-events: none;
+overflow: hidden;
+}
+.sprinkle {
+position: absolute;
+border-radius: 50%;
+animation: twinkle 4s ease-in-out infinite;
+}
+@keyframes twinkle {
+0%, 100% { opacity: 0.25; transform: scale(1); }
+50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.hero-eyebrow {
+font-family: ‘Dancing Script’, cursive;
+font-size: 1.4rem;
+color: var(–caramel);
+margin-bottom: 18px;
+animation: fadeUp 0.8s ease both;
+}
+
+.hero-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.8rem, 6vw, 5.2rem);
+font-weight: 900;
+line-height: 1.05;
+color: var(–chocolate);
+margin-bottom: 24px;
+animation: fadeUp 0.8s 0.15s ease both;
+}
+
+.hero-title span {
+color: var(–deep-rose);
+font-style: italic;
+}
+
+.hero-tagline {
+font-size: 1.05rem;
+font-weight: 300;
+color: var(–mocha);
+max-width: 560px;
+line-height: 1.7;
+margin-bottom: 42px;
+animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.hero-tagline strong { font-weight: 700; color: var(–deep-rose); }
+
+.hero-actions {
+display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+animation: fadeUp 0.8s 0.45s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(28px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-primary {
+background: var(–deep-rose);
+color: white;
+padding: 15px 36px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.95rem;
+letter-spacing: 0.05em;
+transition: all 0.25s;
+box-shadow: 0 6px 30px rgba(181,80,104,0.3);
+}
+
+.btn-primary:hover {
+background: var(–dusty-pink);
+transform: translateY(-3px);
+box-shadow: 0 12px 40px rgba(181,80,104,0.4);
+}
+
+.btn-secondary {
+background: transparent;
+color: var(–deep-rose);
+border: 2px solid var(–deep-rose);
+padding: 13px 32px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 700;
+font-size: 0.95rem;
+letter-spacing: 0.05em;
+transition: all 0.25s;
+}
+
+.btn-secondary:hover {
+background: var(–blush);
+transform: translateY(-3px);
+}
+
+.hero-image-row {
+margin-top: 60px;
+display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;
+animation: fadeUp 0.8s 0.6s ease both;
+}
+
+.hero-cake-emoji {
+font-size: 2.8rem;
+animation: float 4s ease-in-out infinite;
+display: inline-block;
+}
+
+.hero-cake-emoji:nth-child(2) { animation-delay: 0.7s; }
+.hero-cake-emoji:nth-child(3) { animation-delay: 1.4s; }
+.hero-cake-emoji:nth-child(4) { animation-delay: 2.1s; }
+.hero-cake-emoji:nth-child(5) { animation-delay: 2.8s; }
+
+.scroll-hint {
+position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+color: var(–mocha); opacity: 0.5;
+font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+display: flex; flex-direction: column; align-items: center; gap: 8px;
+animation: fadeUp 1s 1s ease both;
+}
+
+.scroll-arrow {
+width: 24px; height: 24px; border-right: 2px solid var(–mocha); border-bottom: 2px solid var(–mocha);
+transform: rotate(45deg);
+animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+0%, 100% { transform: rotate(45deg) translateY(0); }
+50% { transform: rotate(45deg) translateY(6px); }
+}
+
+/* ── SECTIONS ─────────────────────────────────── */
+section { padding: 90px 40px; }
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+.section-label {
+font-size: 0.72rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–caramel);
+font-weight: 700;
+margin-bottom: 12px;
+display: flex; align-items: center; gap: 10px;
+}
+
+.section-label::before {
+content: ‘’;
+display: inline-block;
+width: 28px; height: 2px;
+background: var(–caramel);
+border-radius: 2px;
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 700;
+line-height: 1.2;
+color: var(–chocolate);
+margin-bottom: 20px;
+}
+
+.section-title em { font-style: italic; color: var(–deep-rose); }
+
+.section-body {
+font-size: 1.05rem;
+line-height: 1.85;
+color: var(–mocha);
+max-width: 640px;
+}
+
+/* ── ABOUT ────────────────────────────────────── */
+#about {
+background: var(–white);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 70px;
+align-items: center;
+}
+
+.about-visual {
+position: relative;
+}
+
+.about-card {
+background: var(–butter);
+border-radius: 24px;
+padding: 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.about-card::before {
+content: ‘’;
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at 80% 20%, rgba(245,198,198,0.5) 0%, transparent 60%);
+}
+
+.about-icon { font-size: 5rem; margin-bottom: 16px; display: block; }
+
+.school-badges {
+display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+margin-top: 28px;
+}
+
+.badge {
+background: white;
+border-radius: 50px;
+padding: 10px 22px;
+font-size: 0.82rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+color: var(–deep-rose);
+box-shadow: 0 2px 16px rgba(181,80,104,0.12);
+}
+
+.stats-row {
+display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap;
+}
+
+.stat {
+flex: 1; min-width: 110px;
+background: var(–blush);
+border-radius: 16px;
+padding: 20px;
+text-align: center;
+}
+
+.stat-number {
+font-family: ‘Playfair Display’, serif;
+font-size: 2rem;
+font-weight: 900;
+color: var(–deep-rose);
+display: block;
+}
+
+.stat-label { font-size: 0.78rem; color: var(–mocha); margin-top: 4px; }
+
+/* ── CAUSE ────────────────────────────────────── */
+#cause {
+background: linear-gradient(135deg, var(–cream) 0%, var(–butter) 100%);
+}
+
+.cause-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 28px;
+margin-top: 52px;
+}
+
+.cause-card {
+background: white;
+border-radius: 20px;
+padding: 36px 28px;
+transition: transform 0.3s, box-shadow 0.3s;
+border: 1px solid rgba(201,130,62,0.12);
+position: relative;
+overflow: hidden;
+}
+
+.cause-card::after {
+content: ‘’;
+position: absolute; bottom: 0; left: 0; right: 0;
+height: 4px;
+background: linear-gradient(90deg, var(–rose), var(–caramel));
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.3s;
+}
+
+.cause-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(74,44,30,0.1); }
+.cause-card:hover::after { transform: scaleX(1); }
+
+.cause-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
+
+.cause-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem; font-weight: 700;
+color: var(–chocolate);
+margin-bottom: 12px;
+}
+
+.cause-card p { font-size: 0.92rem; line-height: 1.7; color: var(–mocha); }
+
+/* ── BAKES ────────────────────────────────────── */
+#bakes { background: var(–white); }
+
+.menu-intro {
+display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 24px;
+margin-bottom: 50px;
+}
+
+.bakes-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+}
+
+.bake-card {
+border-radius: 20px;
+overflow: hidden;
+background: var(–cream);
+transition: transform 0.3s, box-shadow 0.3s;
+cursor: default;
+}
+
+.bake-card:hover { transform: translateY(-6px); box-shadow: 0 18px 50px rgba(74,44,30,0.12); }
+
+.bake-image {
+height: 180px;
+display: flex; align-items: center; justify-content: center;
+font-size: 5rem;
+position: relative;
+overflow: hidden;
+}
+
+.bake-image .bg { position: absolute; inset: 0; }
+.bake-image .emoji { position: relative; z-index: 1; }
+
+.bake-info { padding: 22px 24px; }
+
+.bake-info h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem; font-weight: 700;
+color: var(–chocolate);
+margin-bottom: 6px;
+}
+
+.bake-info p { font-size: 0.86rem; color: var(–mocha); line-height: 1.6; }
+
+.bake-tags { margin-top: 12px; display: flex; gap: 7px; flex-wrap: wrap; }
+
+.tag {
+padding: 4px 11px;
+border-radius: 50px;
+font-size: 0.7rem;
+font-weight: 700;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+}
+
+.tag-vegan { background: #d0ddc8; color: #3a5c2e; }
+.tag-gf { background: #fce4b2; color: #7a4a00; }
+.tag-classic { background: #fad6d9; color: #8c3045; }
+.tag-popular { background: #f5c6c6; color: #7a2535; }
+
+/* ── PRICING / PRICE STRIP ───────────────────── */
+.price-strip {
+background: var(–deep-rose);
+color: white;
+border-radius: 20px;
+padding: 36px 44px;
+display: flex; align-items: center; justify-content: space-between;
+flex-wrap: wrap; gap: 24px;
+margin-top: 48px;
+}
+
+.price-strip h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.4rem; font-style: italic;
+opacity: 0.95;
+}
+
+.price-strip p { font-size: 0.9rem; opacity: 0.8; margin-top: 4px; }
+
+.price-items { display: flex; gap: 36px; flex-wrap: wrap; }
+
+.price-item { text-align: center; }
+
+.price-item .amount {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.8rem; font-weight: 900;
+display: block;
+}
+
+.price-item .item-name { font-size: 0.78rem; opacity: 0.8; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* ── EVENT ────────────────────────────────────── */
+#event {
+background: linear-gradient(160deg, var(–butter) 0%, var(–cream) 100%);
+}
+
+.event-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: start;
+margin-top: 48px;
+}
+
+.event-details-card {
+background: white;
+border-radius: 24px;
+padding: 44px;
+box-shadow: 0 8px 40px rgba(74,44,30,0.07);
+}
+
+.event-detail {
+display: flex; align-items: flex-start; gap: 18px;
+padding: 18px 0;
+border-bottom: 1px solid rgba(201,130,62,0.15);
+}
+
+.event-detail:last-child { border-bottom: none; }
+
+.event-detail-icon {
+width: 44px; height: 44px;
+background: var(–blush);
+border-radius: 12px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.3rem;
+flex-shrink: 0;
+}
+
+.event-detail-text strong {
+display: block;
+font-weight: 700;
+font-size: 0.75rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–caramel);
+margin-bottom: 3px;
+}
+
+.event-detail-text span {
+font-size: 1rem;
+color: var(–chocolate);
+line-height: 1.5;
+}
+
+.map-placeholder {
+background: var(–soft-sage);
+border-radius: 24px;
+height: 320px;
+display: flex; flex-direction: column; align-items: center; justify-content: center;
+font-size: 3.5rem;
+gap: 14px;
+position: relative;
+overflow: hidden;
+}
+
+.map-placeholder::before {
+content: ‘’;
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+}
+
+.map-placeholder p {
+font-size: 0.9rem; color: var(–mocha); font-weight: 400;
+position: relative; z-index: 1;
+text-align: center; padding: 0 24px; line-height: 1.6;
+}
+
+/* ── GET INVOLVED ─────────────────────────────── */
+#involve {
+background: var(–cream);
+}
+
+.involve-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+margin-top: 52px;
+}
+
+.involve-card {
+background: white;
+border-radius: 20px;
+padding: 40px 32px;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+border: 2px solid transparent;
+position: relative;
+overflow: hidden;
+}
+
+.involve-card:nth-child(2) {
+background: var(–deep-rose);
+color: white;
+}
+
+.involve-card:nth-child(2) h3,
+.involve-card:nth-child(2) p { color: white; }
+
+.involve-card:nth-child(2) .btn-involve {
+background: white; color: var(–deep-rose);
+}
+
+.involve-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(74,44,30,0.1); }
+
+.involve-icon { font-size: 3.2rem; margin-bottom: 20px; display: block; }
+
+.involve-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem; font-weight: 700;
+color: var(–chocolate);
+margin-bottom: 12px;
+}
+
+.involve-card p {
+font-size: 0.9rem;
+line-height: 1.7;
+color: var(–mocha);
+margin-bottom: 24px;
+}
+
+.btn-involve {
+background: var(–blush);
+color: var(–deep-rose);
+border: none;
+padding: 12px 28px;
+border-radius: 50px;
+font-size: 0.85rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+transition: all 0.2s;
+}
+
+.btn-involve:hover { opacity: 0.85; transform: scale(1.03); }
+
+/* ── DONATE CTA ───────────────────────────────── */
+#donate {
+background: linear-gradient(135deg, var(–chocolate) 0%, var(–mocha) 100%);
+padding: 90px 40px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+#donate::before {
+content: ‘’;
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse at 20% 50%, rgba(245,198,198,0.1) 0%, transparent 60%),
+radial-gradient(ellipse at 80% 50%, rgba(201,130,62,0.1) 0%, transparent 60%);
+}
+
+#donate .container { position: relative; z-index: 1; }
+
+#donate h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4.5vw, 3.5rem);
+font-weight: 900; color: white;
+margin-bottom: 20px;
+}
+
+#donate h2 em { color: var(–warm-tan); font-style: italic; }
+
+#donate p {
+font-size: 1.05rem; color: rgba(255,255,255,0.7);
+max-width: 540px; margin: 0 auto 42px;
+line-height: 1.7;
+}
+
+.donate-btn-big {
+background: var(–rose);
+color: white;
+padding: 18px 52px;
+border-radius: 50px;
+font-size: 1.1rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+text-decoration: none;
+display: inline-block;
+box-shadow: 0 8px 40px rgba(232,144,154,0.4);
+transition: all 0.25s;
+animation: pulse 2.5s ease-in-out infinite;
+}
+
+.donate-btn-big:hover {
+background: var(–blush);
+color: var(–deep-rose);
+transform: translateY(-4px) scale(1.04);
+box-shadow: 0 16px 50px rgba(232,144,154,0.55);
+animation: none;
+}
+
+@keyframes pulse {
+0%, 100% { box-shadow: 0 8px 40px rgba(232,144,154,0.4); }
+50% { box-shadow: 0 8px 60px rgba(232,144,154,0.65); }
+}
+
+/* ── TESTIMONIALS ─────────────────────────────── */
+#testimonials { background: var(–white); }
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+margin-top: 52px;
+}
+
+.testimonial-card {
+background: var(–cream);
+border-radius: 20px;
+padding: 32px;
+position: relative;
+}
+
+.testimonial-card::before {
+content: ‘”’;
+font-family: ‘Playfair Display’, serif;
+font-size: 5rem;
+color: var(–blush);
+line-height: 0.8;
+position: absolute;
+top: 24px; left: 28px;
+}
+
+.testimonial-text {
+font-size: 0.95rem;
+line-height: 1.75;
+color: var(–mocha);
+font-style: italic;
+margin-top: 28px;
+margin-bottom: 20px;
+}
+
+.testimonial-author {
+display: flex; align-items: center; gap: 12px;
+}
+
+.author-avatar {
+width: 40px; height: 40px;
+border-radius: 50%;
+background: var(–blush);
+display: flex; align-items: center; justify-content: center;
+font-size: 1.2rem;
+}
+
+.author-name { font-weight: 700; font-size: 0.88rem; color: var(–chocolate); }
+.author-role { font-size: 0.77rem; color: var(–caramel); }
+
+/* ── GALLERY ──────────────────────────────────── */
+#gallery { background: var(–cream); }
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 16px;
+margin-top: 48px;
+}
+
+.gallery-item {
+border-radius: 16px;
+overflow: hidden;
+aspect-ratio: 1;
+background: var(–butter);
+display: flex; align-items: center; justify-content: center;
+font-size: 3.5rem;
+transition: transform 0.3s;
+cursor: default;
+}
+
+.gallery-item:hover { transform: scale(1.04); }
+.gallery-item:nth-child(1) { background: #fde8d8; }
+.gallery-item:nth-child(2) { background: #f9d6da; }
+.gallery-item:nth-child(3) { background: #fce8b0; }
+.gallery-item:nth-child(4) { background: #d8ecd0; }
+.gallery-item:nth-child(5) { background: #f5d8e8; }
+.gallery-item:nth-child(6) { background: #d8e4ec; }
+.gallery-item:nth-child(7) { background: #ece4d8; }
+.gallery-item:nth-child(8) { background: #f0d8f0; }
+
+/* ── CONTACT ──────────────────────────────────── */
+#contact { background: var(–white); }
+
+.contact-layout {
+display: grid;
+grid-template-columns: 1fr 1.4fr;
+gap: 60px;
+margin-top: 48px;
+align-items: start;
+}
+
+.contact-info h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.5rem; font-weight: 700;
+color: var(–chocolate);
+margin-bottom: 16px;
+}
+
+.contact-info p { font-size: 0.95rem; color: var(–mocha); line-height: 1.7; margin-bottom: 32px; }
+
+.contact-links { display: flex; flex-direction: column; gap: 14px; }
+
+.contact-link {
+display: flex; align-items: center; gap: 14px;
+font-size: 0.9rem; color: var(–mocha);
+text-decoration: none;
+transition: color 0.2s;
+}
+
+.contact-link:hover { color: var(–deep-rose); }
+
+.contact-link-icon {
+width: 38px; height: 38px;
+background: var(–blush);
+border-radius: 10px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.1rem;
+flex-shrink: 0;
+}
+
+.contact-form {
+background: white;
+border-radius: 24px;
+padding: 44px;
+box-shadow: 0 8px 40px rgba(74,44,30,0.07);
+}
+
+.form-row { margin-bottom: 20px; }
+
+.form-row label {
+display: block;
+font-size: 0.78rem;
+font-weight: 700;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+color: var(–caramel);
+margin-bottom: 7px;
+}
+
+.form-row input,
+.form-row textarea,
+.form-row select {
+width: 100%;
+padding: 12px 18px;
+border: 1.5px solid rgba(201,130,62,0.2);
+border-radius: 12px;
+font-family: ‘Lato’, sans-serif;
+font-size: 0.95rem;
+color: var(–chocolate);
+background: var(–cream);
+transition: border-color 0.2s, box-shadow 0.2s;
+outline: none;
+}
+
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+border-color: var(–rose);
+box-shadow: 0 0 0 3px rgba(232,144,154,0.15);
+}
+
+.form-row textarea { resize: vertical; min-height: 110px; }
+
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-submit {
+background: var(–deep-rose);
+color: white;
+border: none;
+padding: 14px 36px;
+border-radius: 50px;
+font-family: ‘Lato’, sans-serif;
+font-size: 0.95rem;
+font-weight: 700;
+letter-spacing: 0.05em;
+cursor: pointer;
+transition: all 0.25s;
+width: 100%;
+margin-top: 8px;
+}
+
+.form-submit:hover { background: var(–dusty-pink); transform: translateY(-2px); }
+
+/* ── FOOTER ───────────────────────────────────── */
+footer {
+background: var(–chocolate);
+color: rgba(255,255,255,0.7);
+padding: 60px 40px 36px;
+}
+
+.footer-inner {
+max-width: 1100px; margin: 0 auto;
+}
+
+.footer-top {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 50px;
+padding-bottom: 48px;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand {
+font-family: ‘Dancing Script’, cursive;
+font-size: 2rem;
+color: var(–warm-tan);
+margin-bottom: 14px;
+display: block;
+}
+
+.footer-tagline { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+
+.social-links { display: flex; gap: 12px; margin-top: 24px; }
+
+.social-btn {
+width: 38px; height: 38px;
+background: rgba(255,255,255,0.08);
+border-radius: 10px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1.1rem;
+text-decoration: none;
+transition: background 0.2s;
+}
+
+.social-btn:hover { background: var(–deep-rose); }
+
+.footer-col h4 {
+font-size: 0.72rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–warm-tan);
+font-weight: 700;
+margin-bottom: 18px;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+.footer-col a {
+color: rgba(255,255,255,0.6);
+text-decoration: none;
+font-size: 0.88rem;
+transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(–warm-tan); }
+
+.footer-bottom {
+display: flex; justify-content: space-between; align-items: center;
+padding-top: 32px;
+font-size: 0.8rem;
+flex-wrap: wrap; gap: 12px;
+}
+
+.footer-bottom a { color: var(–warm-tan); text-decoration: none; }
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 900px) {
+nav { padding: 0 20px; }
+.nav-links { display: none; }
+section { padding: 70px 24px; }
+
+```
+.about-grid,
+.event-layout,
+.contact-layout { grid-template-columns: 1fr; gap: 36px; }
+
+.cause-grid,
+.involve-grid,
+.testimonials-grid { grid-template-columns: 1fr; }
+
+.bakes-grid { grid-template-columns: repeat(2, 1fr); }
+.gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+.footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+.price-strip { flex-direction: column; text-align: center; }
+```
+
+}
+
+@media (max-width: 560px) {
+.bakes-grid,
+.gallery-grid { grid-template-columns: 1fr; }
+.footer-top { grid-template-columns: 1fr; }
+.form-grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────── -->
+
+<nav>
+  <a href="#hero" class="nav-brand">QE Together 🍰</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#cause">Our Cause</a></li>
+    <li><a href="#bakes">Our Bakes</a></li>
+    <li><a href="#event">Event</a></li>
+    <li><a href="#involve">Get Involved</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.paypal.com/donate" target="_blank" rel="noopener" class="nav-donate">Donate ♥</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ────────────────────────────────── -->
+
+<section id="hero">
+  <div class="hero-blob blob-1"></div>
+  <div class="hero-blob blob-2"></div>
+  <div class="hero-blob blob-3"></div>
+
+  <!-- Sprinkle dots -->
+
+  <div class="sprinkles">
+    <div class="sprinkle" style="width:8px;height:8px;background:#f5c6c6;top:15%;left:8%;animation-delay:0s;"></div>
+    <div class="sprinkle" style="width:6px;height:6px;background:#c9823e;top:25%;left:20%;animation-delay:0.8s;"></div>
+    <div class="sprinkle" style="width:10px;height:10px;background:#e8909a;top:10%;right:15%;animation-delay:1.6s;"></div>
+    <div class="sprinkle" style="width:7px;height:7px;background:#a8b89a;top:60%;right:8%;animation-delay:0.4s;"></div>
+    <div class="sprinkle" style="width:9px;height:9px;background:#d4788a;bottom:20%;left:12%;animation-delay:2s;"></div>
+    <div class="sprinkle" style="width:5px;height:5px;background:#c9823e;top:40%;right:22%;animation-delay:1.2s;"></div>
+    <div class="sprinkle" style="width:8px;height:8px;background:#f5c6c6;bottom:35%;right:30%;animation-delay:3s;"></div>
+  </div>
+
+  <div class="hero-eyebrow">✦ High Barnet, London ✦</div>
+
+  <h1 class="hero-title">
+    High Barnet<br>
+    <em>Community</em><br>
+    Bake Sale
+  </h1>
+
+  <p class="hero-tagline">
+    <strong>QE Together:</strong> Students from Queen Elizabeth's School and Queen Elizabeth's Girls' School,
+    united for community impact — one delicious bake at a time.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#bakes" class="btn-primary">See Our Bakes 🧁</a>
+    <a href="#event" class="btn-secondary">Event Details</a>
+  </div>
+
+  <div class="hero-image-row">
+    <span class="hero-cake-emoji">🍰</span>
+    <span class="hero-cake-emoji">🧁</span>
+    <span class="hero-cake-emoji">🍩</span>
+    <span class="hero-cake-emoji">🍪</span>
+    <span class="hero-cake-emoji">🥐</span>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ────────────────────────────────── -->
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Two Schools.<br><em>One Mission.</em></h2>
+        <p class="section-body">
+          We are a group of students coming together through <strong>QE Together</strong>, a collaboration between
+          <a href="https://www.qebarnet.co.uk/" target="_blank" rel="noopener" style="color:var(--deep-rose);font-weight:700;text-decoration:none;border-bottom:2px solid var(--blush);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--deep-rose)'" onmouseout="this.style.borderColor='var(--blush)'">Queen Elizabeth's School, Barnet</a> and
+          <a href="https://www.qegschool.org.uk/" target="_blank" rel="noopener" style="color:var(--deep-rose);font-weight:700;text-decoration:none;border-bottom:2px solid var(--blush);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--deep-rose)'" onmouseout="this.style.borderColor='var(--blush)'">Queen Elizabeth's Girls' School</a>. Our shared goal is simple: to make a meaningful difference in our community.
+        </p>
+        <p class="section-body" style="margin-top:18px;">
+          This bake sale is more than just an event — it's a collective effort to address real challenges within our local area.
+          From supporting families in need to contributing to community projects, we are committed to using our time, skills,
+          and creativity to create positive change.
+        </p>
+        <p class="section-body" style="margin-top:18px;">
+          By working together, we aim to raise funds that directly support local initiatives while also bringing people closer
+          as a community. Every bake, every donation, and every act of support helps us take a step toward solving problems
+          and building something better for everyone. <strong>Together, we believe small actions can lead to big change.</strong>
+        </p>
+
+```
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-number">2</span>
+        <div class="stat-label">Schools united</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">100%</span>
+        <div class="stat-label">Funds to community</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">💛</span>
+        <div class="stat-label">Student-led</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-visual">
+    <div class="about-card">
+      <span class="about-icon">🤝</span>
+      <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--chocolate);font-style:italic;line-height:1.6;">
+        "Together we bake, together we give, together we build a better Barnet."
+      </p>
+      <div class="school-badges">
+        <div class="badge">QE Boys' School</div>
+        <div class="badge">QE Girls' School</div>
+        <div class="badge">High Barnet</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── CAUSE ─────────────────────────────────── -->
+
+<section id="cause">
+  <div class="container">
+    <div class="section-label">Our Cause</div>
+    <h2 class="section-title">Why We <em>Bake & Give</em></h2>
+    <p class="section-body">
+      Every cupcake sold helps fund meaningful change in our local community.
+      Here's where your generosity goes:
+    </p>
+
+```
+<div class="cause-grid">
+  <div class="cause-card">
+    <span class="cause-icon">🏘️</span>
+    <h3>Local Community Projects</h3>
+    <p>Supporting grassroots initiatives across High Barnet — from neighbourhood clean-ups to community garden programmes that bring residents together.</p>
+  </div>
+  <div class="cause-card">
+    <span class="cause-icon">👵</span>
+    <h3>Supporting the Elderly</h3>
+    <p>Partnering with local care homes and charities to provide companionship, activities, and vital support for isolated elderly residents in our borough.</p>
+  </div>
+  <div class="cause-card">
+    <span class="cause-icon">🌱</span>
+    <h3>Youth Volunteering</h3>
+    <p>Funding opportunities for young people to volunteer locally — developing skills, building confidence, and creating a culture of giving back from an early age.</p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── BAKES ─────────────────────────────────── -->
+
+<section id="bakes">
+  <div class="container">
+    <div class="menu-intro">
+      <div>
+        <div class="section-label">Our Bakes</div>
+        <h2 class="section-title">Baked with <em>Love</em></h2>
+      </div>
+      <p style="font-size:0.9rem;color:var(--mocha);max-width:340px;line-height:1.7;text-align:right;">
+        All our bakes are homemade by student volunteers. Options for everyone, including vegan and gluten-free.
+      </p>
+    </div>
+
+```
+<div class="bakes-grid">
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#3d1e0e,#7a4a35);"></div>
+      <span class="emoji">🍫</span>
+    </div>
+    <div class="bake-info">
+      <h3>Chocolate Cake</h3>
+      <p>A rich, indulgent chocolate cake with a deep cocoa flavour and silky smooth chocolate frosting.</p>
+      <div class="bake-tags">
+        <span class="tag tag-popular">Fan Favourite</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#fde8d8,#f9d0d4);"></div>
+      <span class="emoji">🧁</span>
+    </div>
+    <div class="bake-info">
+      <h3>Cupcakes</h3>
+      <p>Light, fluffy sponge topped with swirls of buttercream frosting — available in a variety of flavours.</p>
+      <div class="bake-tags">
+        <span class="tag tag-popular">Most Popular</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#fce4b0,#e8c99a);"></div>
+      <span class="emoji">🧇</span>
+    </div>
+    <div class="bake-info">
+      <h3>Muffins</h3>
+      <p>Soft and fluffy muffins bursting with flavour — from blueberry and lemon to double chocolate.</p>
+      <div class="bake-tags">
+        <span class="tag tag-classic">Classic</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#4a2c1e,#8b4513);"></div>
+      <span class="emoji">🟫</span>
+    </div>
+    <div class="bake-info">
+      <h3>Brownies</h3>
+      <p>Dense, fudgy, and utterly irresistible — our brownies have a crisp top and a gooey, chocolatey centre.</p>
+      <div class="bake-tags">
+        <span class="tag tag-popular">Best Seller</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#f9eecc,#e8c99a);"></div>
+      <span class="emoji">🍌</span>
+    </div>
+    <div class="bake-info">
+      <h3>Banana Cake</h3>
+      <p>Wonderfully moist and naturally sweet, our banana cake is a comforting home-baked classic everyone loves.</p>
+      <div class="bake-tags">
+        <span class="tag tag-classic">Classic</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bake-card">
+    <div class="bake-image">
+      <div class="bg" style="background:linear-gradient(135deg,#f9e4c8,#f5d8b0);"></div>
+      <span class="emoji">🍪</span>
+    </div>
+    <div class="bake-info">
+      <h3>Chocolate Chip Cookies</h3>
+      <p>Crispy edges, soft centres, loaded with chocolate chips — baked fresh and completely irresistible.</p>
+      <div class="bake-tags">
+        <span class="tag tag-popular">Popular</span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── EVENT DETAILS ──────────────────────────── -->
+
+<section id="event">
+  <div class="container">
+    <div class="section-label">Event Details</div>
+    <h2 class="section-title">Come Join <em>Us!</em></h2>
+    <p class="section-body">Mark the date and bring your appetite — we'd love to see you there.</p>
+
+```
+<div class="event-layout">
+  <div class="event-details-card">
+    <div class="event-detail">
+      <div class="event-detail-icon">📅</div>
+      <div class="event-detail-text">
+        <strong>Date</strong>
+        <span>Every Sunday, 19th July – 30th August 2025</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <div class="event-detail-icon">⏰</div>
+      <div class="event-detail-text">
+        <strong>Time</strong>
+        <span>10:00 AM – 3:00 PM</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <div class="event-detail-icon">📍</div>
+      <div class="event-detail-text">
+        <strong>Location</strong>
+        <span>High Barnet Community Hall<br>Church Passage, High Barnet, London EN5</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <div class="event-detail-icon">🚇</div>
+      <div class="event-detail-text">
+        <strong>Getting Here</strong>
+        <span>High Barnet Underground Station (Northern Line) — 5 minute walk</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <div class="event-detail-icon">🎟️</div>
+      <div class="event-detail-text">
+        <strong>Entry</strong>
+        <span>Free entry — everyone welcome!</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="map-placeholder">
+      <span>🗺️</span>
+      <p>
+        <strong style="color:var(--chocolate);font-family:'Playfair Display',serif;">High Barnet Community Hall</strong><br>
+        Church Passage · High Barnet · London EN5<br><br>
+        Near High Barnet Station (Northern Line)<br>
+        Free parking nearby on Sundays
+      </p>
+    </div>
+    <div style="background:var(--blush);border-radius:16px;padding:22px 28px;margin-top:16px;display:flex;align-items:center;gap:16px;">
+      <span style="font-size:2rem;">🌦️</span>
+      <div>
+        <div style="font-weight:700;font-size:0.9rem;color:var(--chocolate);">Rain or Shine!</div>
+        <div style="font-size:0.84rem;color:var(--mocha);margin-top:3px;">The event will go ahead regardless of weather — we'll be inside. Come warm up with a slice of cake!</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── GET INVOLVED ───────────────────────────── -->
+
+<section id="involve">
+  <div class="container">
+    <div class="section-label">Get Involved</div>
+    <h2 class="section-title">Be Part of<br><em>Something Sweet</em></h2>
+    <p class="section-body">There are so many ways to support QE Together — and every contribution matters.</p>
+
+```
+<div class="involve-grid">
+  <div class="involve-card">
+    <span class="involve-icon">🙋</span>
+    <h3>Volunteer</h3>
+    <p>Join our team of student volunteers on the day — helping set up, serve customers, manage stalls, and keep the energy going. No experience needed, just enthusiasm!</p>
+    <a href="#contact" class="btn-involve">Sign Up to Volunteer</a>
+  </div>
+
+  <div class="involve-card">
+    <span class="involve-icon">🎂</span>
+    <h3>Donate a Bake</h3>
+    <p>Are you a brilliant baker? Contribute homemade goods to our sale. We welcome everything from simple cookies to showstopping cakes — all dietary requirements catered for.</p>
+    <a href="#contact" class="btn-involve">Get in Touch</a>
+  </div>
+
+  <div class="involve-card">
+    <span class="involve-icon">💝</span>
+    <h3>Spread the Word</h3>
+    <p>Share our event with friends, family, and your local network. Follow us on social media and help us reach as many people as possible across Barnet and beyond.</p>
+    <a href="#contact" class="btn-involve">Follow Us</a>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── DONATE CTA ─────────────────────────────── -->
+
+<section id="donate">
+  <div class="container">
+    <h2>Every Penny<br><em>Makes a Difference</em></h2>
+    <p>
+      Can't make it on the day? You can still make an impact. Donate online and help us raise funds for our
+      local community in High Barnet.
+    </p>
+    <a href="https://www.paypal.com/donate" target="_blank" rel="noopener" class="donate-btn-big">💛 Donate Now via PayPal</a>
+    <p style="margin-top:24px;font-size:0.8rem;opacity:0.5;">
+      All donations are used solely for local community initiatives and volunteering programmes.
+    </p>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────── -->
+
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Student Stories</div>
+    <h2 class="section-title">Voices from <em>QE Together</em></h2>
+
+```
+<div class="testimonials-grid">
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      This project has genuinely changed how I see community. It's not just about raising money — it's about students taking responsibility and showing adults that we care deeply about where we live.
+    </p>
+    <div class="testimonial-author">
+      <div class="author-avatar">👦</div>
+      <div>
+        <div class="author-name">Tapash Gurung, Year 12</div>
+        <div class="author-role">Queen Elizabeth's School · Admin Volunteer Coordinator</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      I never knew baking could feel so meaningful! Knowing that every cookie I made would help someone in our community made the whole process so much more special. I can't wait for the day itself.
+    </p>
+    <div class="testimonial-author">
+      <div class="author-avatar">👦</div>
+      <div>
+        <div class="author-name">Faaiz, Year 12</div>
+        <div class="author-role">Queen Elizabeth's School · Lead Activity Organiser</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-card">
+    <p class="testimonial-text">
+      I never knew baking could feel so meaningful! Knowing that every cookie I made would help someone in our community made the whole process so much more special. I can't wait for the day itself.
+    </p>
+    <div class="testimonial-author">
+      <div class="author-avatar">👧</div>
+      <div>
+        <div class="author-name">Priya, Year 10</div>
+        <div class="author-role">Queen Elizabeth's Girls' School · Volunteer</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── GALLERY ─────────────────────────────────── -->
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">A Taste of<br><em>What's Coming</em></h2>
+
+```
+<div class="gallery-grid">
+  <div class="gallery-item">🧁</div>
+  <div class="gallery-item">🍰</div>
+  <div class="gallery-item">🍪</div>
+  <div class="gallery-item">🥐</div>
+  <div class="gallery-item">🍩</div>
+  <div class="gallery-item">🎂</div>
+  <div class="gallery-item">🍫</div>
+  <div class="gallery-item">🌸</div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── CONTACT ─────────────────────────────────── -->
+
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Get in <em>Touch</em></h2>
+
+```
+<div class="contact-layout">
+  <div class="contact-info">
+    <h3>We'd love to hear from you</h3>
+    <p>
+      Whether you want to volunteer, donate bakes, ask a question, or simply find out more about
+      QE Together — drop us a message and we'll get back to you as soon as possible.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:tapashgrg09@hotmail.com" class="contact-link">
+        <div class="contact-link-icon">✉️</div>
+        <span>tapashgrg09@hotmail.com</span>
+      </a>
+      <a href="tel:07459928525" class="contact-link">
+        <div class="contact-link-icon">📞</div>
+        <span>07459 928525</span>
+      </a>
+      <a href="#" class="contact-link">
+        <div class="contact-link-icon">📸</div>
+        <span>@QETogether on Instagram</span>
+      </a>
+      <a href="#" class="contact-link">
+        <div class="contact-link-icon">🐦</div>
+        <span>@QETogether on Twitter / X</span>
+      </a>
+      <a href="#" class="contact-link">
+        <div class="contact-link-icon">📘</div>
+        <span>QE Together on Facebook</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--chocolate);margin-bottom:24px;">Send us a message</h3>
+    <div class="form-grid-2">
+      <div class="form-row">
+        <label>First Name</label>
+        <input type="text" placeholder="Your name">
+      </div>
+      <div class="form-row">
+        <label>Last Name</label>
+        <input type="text" placeholder="Your surname">
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Email Address</label>
+      <input type="email" placeholder="you@example.com">
+    </div>
+    <div class="form-row">
+      <label>I'd like to...</label>
+      <select>
+        <option value="">Please select</option>
+        <option>Volunteer on the day</option>
+        <option>Donate a bake</option>
+        <option>Make a monetary donation</option>
+        <option>Ask a question</option>
+        <option>Get involved as a local business</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Message</label>
+      <textarea placeholder="Tell us how you'd like to help, or ask us anything..."></textarea>
+    </div>
+    <button class="form-submit" id="send-btn">Send Message 💛</button>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────── -->
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <span class="footer-brand">QE Together 🍰</span>
+        <p class="footer-tagline">
+          A collaborative initiative by students from Queen Elizabeth's School and Queen Elizabeth's Girls' School,
+          Barnet — baking for a better community.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-btn" title="Instagram">📸</a>
+          <a href="#" class="social-btn" title="Twitter">🐦</a>
+          <a href="#" class="social-btn" title="Facebook">📘</a>
+          <a href="#" class="social-btn" title="TikTok">🎵</a>
+        </div>
+      </div>
+
+```
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#cause">Our Cause</a></li>
+      <li><a href="#bakes">Our Bakes</a></li>
+      <li><a href="#event">Event Details</a></li>
+      <li><a href="#involve">Get Involved</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Our Schools</h4>
+    <ul>
+      <li><a href="https://www.qebarnet.co.uk/" target="_blank" rel="noopener">QE Boys' School</a></li>
+      <li><a href="https://www.qegschool.org.uk/" target="_blank" rel="noopener">QE Girls' School</a></li>
+      <li><a href="#about">QE Together Initiative</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <ul>
+      <li><a href="mailto:tapashgrg09@hotmail.com">Email Us</a></li>
+      <li><a href="tel:07459928525">07459 928525</a></li>
+      <li><a href="#donate">Donate Online</a></li>
+      <li><a href="#contact">Volunteer Sign-Up</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <span>© 2025 QE Together · High Barnet Bake Sale · All funds to local community causes</span>
+  <span>Website made by Tapash Gurung</span>
+</div>
+```
+
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for nav links (exclude external links and mailto/tel)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll-triggered fade-in for sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.cause-card, .bake-card, .involve-card, .testimonial-card, .gallery-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Send Message button — opens mailto with form contents
+  document.getElementById('send-btn').addEventListener('click', function() {
+    const firstName = document.querySelector('input[placeholder="Your name"]').value.trim();
+    const lastName  = document.querySelector('input[placeholder="Your surname"]').value.trim();
+    const email     = document.querySelector('input[placeholder="you@example.com"]').value.trim();
+    const subject   = document.querySelector('select').value;
+    const message   = document.querySelector('textarea').value.trim();
+
+    const fullName  = [firstName, lastName].filter(Boolean).join(' ') || 'Website visitor';
+    const emailSubject = encodeURIComponent('QE Together Bake Sale – ' + (subject || 'Enquiry'));
+    const emailBody = encodeURIComponent(
+      'Name: ' + fullName + '\n' +
+      'Email: ' + (email || 'Not provided') + '\n' +
+      'Enquiry type: ' + (subject || 'Not specified') + '\n\n' +
+      'Message:\n' + (message || '(No message entered)')
+    );
+
+    window.location.href = 'mailto:tapashgrg09@hotmail.com?subject=' + emailSubject + '&body=' + emailBody;
+
+    const btn = this;
+    btn.textContent = '✅ Opening your email app...';
+    btn.style.background = 'var(--sage)';
+    btn.style.color = 'var(--chocolate)';
+    setTimeout(() => {
+      btn.textContent = 'Send Message 💛';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
